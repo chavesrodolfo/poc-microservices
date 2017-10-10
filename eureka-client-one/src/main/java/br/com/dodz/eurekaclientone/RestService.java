@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class RestService {
 
 	@Autowired
-	private FeignClientTwo feignClientTwo;
+	private FeignEurekaClientTwo feignEurekaClientTwo;
 
 	@RequestMapping(value = "/hi", method = RequestMethod.GET)
 	public ResponseEntity<String> sayHi() {
@@ -21,7 +21,7 @@ public class RestService {
 
 	@RequestMapping(value = "/hy", method = RequestMethod.GET)
 	public ResponseEntity<String> sayHiUsingClientTwo() {
-		return new ResponseEntity<>(feignClientTwo.sayHiByClientTwo() + " using Hystrix.", HttpStatus.OK);
+		return new ResponseEntity<>(feignEurekaClientTwo.sayHiByEurekaClientTwo() + " using Feign.", HttpStatus.OK);
 	}
 
 }

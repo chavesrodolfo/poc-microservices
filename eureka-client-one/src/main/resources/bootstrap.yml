@@ -1,0 +1,12 @@
+CONFIG_SERVER_URL: http://127.0.0.1:8888
+
+server:
+  port: 8081
+
+spring:
+  application:
+    name: eureka-client-one
+  cloud:
+    config:
+      uri: ${CONFIG_SERVER_URL}
+      fail-fast: true
